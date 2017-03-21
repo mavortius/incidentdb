@@ -1,0 +1,7 @@
+import br.com.proinde.incidentdb.Incident
+
+model {
+	Incident incident
+}
+
+json hal.render(incident)

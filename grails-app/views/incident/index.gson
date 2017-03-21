@@ -1,0 +1,21 @@
+import br.com.proinde.incidentdb.Incident
+
+model {
+	Iterable<Incident> incidentList
+	Integer incidentCount
+	Integer max
+	Integer offset
+	String sort
+	String order
+}
+
+json {
+    hal.paginate(Incident, incidentCount, offset, max, sort, order)
+	incidents tmpl.incident(incidentList ?: [])
+    count incidentCount
+    offset offset
+    max max
+    sort sort
+    order order
+}
+

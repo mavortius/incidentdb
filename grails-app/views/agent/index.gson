@@ -1,0 +1,21 @@
+import br.com.proinde.incidentdb.Agent
+
+model {
+	Iterable<Agent> agentList
+    Integer agentCount
+    Integer max
+    Integer offset
+    String sort
+    String order
+}
+
+json {
+    hal.paginate(Agent, agentCount, max, offset, sort, order)
+    agents tmpl.agent(agentList ?: [])
+    count agentCount
+    max max
+    offset offset
+    sort sort
+    order order
+}
+

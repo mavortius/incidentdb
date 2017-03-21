@@ -1,0 +1,7 @@
+import br.com.proinde.incidentdb.Agent
+
+model {
+	Agent agent
+}
+
+json hal.render(agent)
